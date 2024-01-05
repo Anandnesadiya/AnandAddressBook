@@ -1,0 +1,125 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="pagetitle">
+    <h1>AddressBook</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-area="DashBoard" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+
+        @if (TempData["UserName"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" id="btnclosemsg" class="btn btn-primary"><span aria-hidden="true">&times;</span></button>
+                <strong>@TempData["UserName"]</strong>
+            </div>
+        }
+        <!-- Country Card -->
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat dashboard-stat-v2 blue" href="#">
+                    <div class="visual">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            <span data-counter="counterup"><h4>@ViewBag.CountryCount</h4></span>
+                        </div>
+                        <div class="desc"> Country Count</div>
+                    </div>
+                </a>
+            </div>
+            <!-- Country Card End-->
+            <!-- State Card -->
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat dashboard-stat-v2 red" href="#">
+                    <div class="visual">
+                        <i class="fa fa-bar-chart-o"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            <span data-counter="counterup"><h4>@ViewBag.StateCount</h4></span>
+                        </div>
+                        <div class="desc"> State Count </div>
+                    </div>
+                </a>
+            </div>
+            <!-- State Card End-->
+            <!-- City Card -->
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat dashboard-stat-v2 green" href="#">
+                    <div class="visual">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            <span data-counter="counterup"><h4> @ViewBag.cityCount</h4></span>
+                        </div>
+                        <div class="desc"> City Count </div>
+                    </div>
+                </a>
+            </div>
+            <!-- City Card End-->
+            <!-- Contact Card -->
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat dashboard-stat-v2 purple" href="#">
+                    <div class="visual">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            
+                            <span data-counter="counterup" data-value="89"><h4>@ViewBag.contactcount </h4></span>
+                        </div>
+                        <div class="desc"> Contact Count </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Contact Card End-->
+            <!-- Contact Category Card -->
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat dashboard-stat-v2 purple" href="#">
+                    <div class="visual">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            
+                            <span data-counter="counterup" data-value="89"><h4>@ViewBag.contactcategorycount</h4></span>
+                        </div>
+                        <div class="desc"> Contact Category Count </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Contact Category Card End-->
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+    </div>
+</section>
+
+@section Scripts{}
